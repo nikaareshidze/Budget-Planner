@@ -6,8 +6,8 @@ export default function AddExpense() {
     <div>
       <h1>Add Expense</h1>
       <StyledCards>
-        <ExpenseInput name="Name" />
-        <ExpenseInput name="Cost" />
+        <ExpenseInput name="Name" type="text" />
+        <ExpenseInput name="Cost" type="number" />
       </StyledCards>
     </div>
   );
