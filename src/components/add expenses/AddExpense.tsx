@@ -1,5 +1,6 @@
 import ExpenseInput from "./ExpenseInput";
 import StyledCards from "../../styles/StyledCards";
+import Button from "../../styles/buttons/Button";
 
 export default function AddExpense() {
   return (
@@ -9,6 +10,7 @@ export default function AddExpense() {
         <ExpenseInput name="Name" type="text" />
         <ExpenseInput name="Cost" type="number" />
       </StyledCards>
+      <Button>Save</Button>
     </div>
   );
 }
