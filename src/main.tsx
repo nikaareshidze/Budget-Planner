@@ -12,9 +12,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+import { store } from "./store/store";
+import { Provider } from "react-redux";
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
