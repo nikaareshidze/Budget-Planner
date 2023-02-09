@@ -16,7 +16,7 @@ export default function AddExpense() {
 
   const dispatch = useDispatch();
 
-  const { register, handleSubmit } = useForm<Inputs>();
+  const { register, handleSubmit, resetField } = useForm<Inputs>();
 
   const [id, setId] = useState(1);
 
@@ -25,6 +25,8 @@ export default function AddExpense() {
       addExpense({ cost: data.expenseCost, name: data.expenseName, id: id })
     );
     setId((id) => id + 1);
+    resetField("expenseName");
+    resetField("expenseCost");
   };
 
   console.log(expenses);
