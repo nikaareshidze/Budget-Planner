@@ -11,6 +11,7 @@ import { useState } from "react";
 
 export default function Cards() {
   const expenses = useSelector((state: RootState) => state.expense.expenses);
+  const budget = useSelector((state: RootState) => state.expense.budget);
 
   let [spentSoFar, setSpentSoFar] = useState(0);
 
@@ -26,11 +27,13 @@ export default function Cards() {
         backgroundColor="#E6E2C3"
         style={{ justifyContent: "space-between" }}
       >
-        <ThisTitle>Budget: $2000</ThisTitle>
+        <ThisTitle>{`Budget: ${budget}`}</ThisTitle>
         <Button style={{ marginRight: "1em" }}>Edit</Button>
       </Card>
       <Card backgroundColor="#227C70">
-        <ThisTitle>{`Remaining ${expenses[0] ? remaining : ""}`}</ThisTitle>
+        <ThisTitle>{`Remaining: ${
+          expenses[0] ? remaining : budget
+        }`}</ThisTitle>
       </Card>
       <Card backgroundColor="#1C315E">
         <ThisTitle>{`Spent so far: ${spentSoFar}`}</ThisTitle>
