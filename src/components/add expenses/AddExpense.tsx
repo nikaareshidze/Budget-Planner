@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 
-import { addExpense } from "../../store/ExpenseSlice";
+import { addExpense } from "../../store/expenseSlice";
 
 type Inputs = {
   expenseName: string;
@@ -28,8 +28,6 @@ export default function AddExpense() {
     resetField("expenseName");
     resetField("expenseCost");
   };
-
-  //console.log(expenses);
 
   return (
     <>
