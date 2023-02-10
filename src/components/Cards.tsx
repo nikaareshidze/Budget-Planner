@@ -5,7 +5,21 @@ import Title from "../styles/fonts/Title";
 import StyledCards from "../styles/StyledCards";
 import Button from "../styles/buttons/Button";
 
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { useState } from "react";
+
 export default function Cards() {
+  const expenses = useSelector((state: RootState) => state.expense.expenses);
+
+  let [spentSoFar, setSpentSoFar] = useState(0);
+
+  const foo = expenses.map(function (item) {
+    return (spentSoFar = spentSoFar + item.cost);
+  });
+
+  let remaining = 2000 - spentSoFar;
+
   return (
     <StyledCards>
       <Card
@@ -16,10 +30,10 @@ export default function Cards() {
         <Button style={{ marginRight: "1em" }}>Edit</Button>
       </Card>
       <Card backgroundColor="#227C70">
-        <ThisTitle>Remaining: $860</ThisTitle>
+        <ThisTitle>{`Remaining ${expenses[0] ? remaining : ""}`}</ThisTitle>
       </Card>
       <Card backgroundColor="#1C315E">
-        <ThisTitle>Spent so far: $1140</ThisTitle>
+        <ThisTitle>{`Spent so far: ${spentSoFar}`}</ThisTitle>
       </Card>
     </StyledCards>
   );

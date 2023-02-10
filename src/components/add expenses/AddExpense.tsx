@@ -29,7 +29,7 @@ export default function AddExpense() {
     resetField("expenseCost");
   };
 
-  console.log(expenses);
+  //console.log(expenses);
 
   return (
     <>
