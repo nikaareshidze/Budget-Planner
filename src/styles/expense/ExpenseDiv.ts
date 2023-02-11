@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const ExpenseDiv = styled.div`
-  width: 50em;
-
   display: flex;
   align-items: center;
   justify-content: space-between;

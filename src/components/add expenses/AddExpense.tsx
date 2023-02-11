@@ -31,7 +31,7 @@ export default function AddExpense() {
 
   return (
     <>
-      <h1>Add Expense</h1>
+      <SectionTitle>Add Expense</SectionTitle>
       <form onSubmit={handleSubmit(onSubmit)} style={formStyle}>
         <div style={{ display: "flex", gap: "1em" }}>
           <div>
@@ -63,10 +63,12 @@ export default function AddExpense() {
 
 import Button from "../../styles/buttons/Button";
 import Title from "../../styles/fonts/Title";
+import SectionTitle from "../../styles/SectionsTitle";
 
 const inputStyle = {
-  width: "15rem",
+  width: "20rem",
   height: "2rem",
+  marginTop: "0.6em",
 };
 
 const formStyle: {} = {

@@ -47,7 +47,7 @@ export default function Cards() {
           backgroundColor="#E6E2C3"
           style={{ justifyContent: "space-between" }}
         >
-          <ThisTitle>{`Budget: ${budget}`}</ThisTitle>
+          <ThisTitle>{`Budget: $${budget}`}</ThisTitle>
           <Button
             style={{ marginRight: "1em" }}
             onClick={() => {
@@ -58,12 +58,12 @@ export default function Cards() {
           </Button>
         </Card>
         <Card backgroundColor="#227C70">
-          <ThisTitle>{`Remaining: ${
+          <ThisTitle>{`Remaining: $${
             expenses[0] ? remaining : budget
           }`}</ThisTitle>
         </Card>
         <Card backgroundColor="#1C315E">
-          <ThisTitle>{`Spent so far: ${spentSoFar}`}</ThisTitle>
+          <ThisTitle>{`Spent so far: $${spentSoFar}`}</ThisTitle>
         </Card>
       </StyledCards>
       {newBudgetIsShown && (
