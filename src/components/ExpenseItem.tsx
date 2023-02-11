@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
+import { useState } from "react";
 
 import { updateExpenses } from "../store/expenseSlice";
 
@@ -16,6 +16,13 @@ export default function ExpenseItem({ item }: any) {
     dispatch(updateExpenses(x));
   };
 
+  const [deleteButtonColor, setDeleteButtonColor] = useState("black");
+  function changeDeleteButtonColor() {
+    deleteButtonColor == "black"
+      ? setDeleteButtonColor("red")
+      : setDeleteButtonColor("black");
+  }
+
   return (
     <ExpenseDiv>
       <Title>{item.name}</Title>
@@ -23,13 +30,22 @@ export default function ExpenseItem({ item }: any) {
         <ExpenseCostDiv>
           <Title>{`$${item.cost}`}</Title>
         </ExpenseCostDiv>
-        <ThisTitle
+
+        <span
+          className="material-symbols-outlined"
           onClick={() => {
             foo();
           }}
+          onMouseEnter={() => {
+            changeDeleteButtonColor();
+          }}
+          onMouseLeave={() => {
+            changeDeleteButtonColor();
+          }}
+          style={{ color: deleteButtonColor }}
         >
-          X
-        </ThisTitle>
+          delete
+        </span>
       </div>
     </ExpenseDiv>
   );
@@ -39,7 +55,3 @@ export default function ExpenseItem({ item }: any) {
 import ExpenseDiv from "../styles/expense/ExpenseDiv";
 import Title from "../styles/fonts/Title";
 import ExpenseCostDiv from "../styles/expense/ExpenseCostDiv";
-
-const ThisTitle = styled(Title)`
-  cursor: pointer;
-`;

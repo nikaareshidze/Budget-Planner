@@ -35,11 +35,15 @@ export default function SearchExpense() {
   return (
     <div>
       <SearchForm onChange={handleSubmit(search)}>
-        <SearchInput {...register("search")} placeholder="Type to search..." />
+        <SearchInput
+          {...register("search")}
+          placeholder="Type to search..."
+          value={searchWord}
+        />
       </SearchForm>
 
       <div style={{ marginBottom: "1em" }}>
-        {searchWord.length > 0 &&
+        {searchWord.length != 0 &&
           searchResultObject.map(function (item) {
             return <ExpenseItem item={item} />;
           })}

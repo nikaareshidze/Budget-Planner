@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 // store imports
 import { addExpense } from "../store/expenseSlice";
+import { setSearchWord } from "../store/expenseSlice";
 
 //typescript declarations
 type Inputs = {
@@ -26,6 +27,7 @@ export default function AddExpense() {
     setId((id) => id + 1);
     resetField("expenseName");
     resetField("expenseCost");
+    dispatch(setSearchWord(""));
   };
 
   return (
