@@ -7,8 +7,8 @@ import SearchExpense from "./SearchExpense";
 
 export default function Expenses() {
   const expenses = useSelector((state: RootState) => state.expense.expenses);
-  const allExpenseVisibility = useSelector(
-    (state: RootState) => state.visibility.allExpenseVisibility
+  const searchWord = useSelector(
+    (state: RootState) => state.expense.searchWord
   );
 
   const expense = expenses.map(function (item) {
@@ -19,7 +19,7 @@ export default function Expenses() {
     <div>
       <SectionTitle>Expenses</SectionTitle>
       <SearchExpense />
-      <div>{allExpenseVisibility && expense}</div>
+      <div>{searchWord.length == 0 && expense}</div>
     </div>
   );
 }

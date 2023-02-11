@@ -5,11 +5,13 @@ type expenseObject = { name: string; cost: number; id: number };
 export interface expenseSlice {
   expenses: Array<expenseObject>;
   budget: number;
+  searchWord: string;
 }
 
 const initialState: expenseSlice = {
   expenses: [],
   budget: 2000,
+  searchWord: "",
 };
 
 export const expenseSlice = createSlice({
@@ -25,9 +27,13 @@ export const expenseSlice = createSlice({
     setBudget: (state, action: PayloadAction<number>) => {
       state.budget = action.payload;
     },
+    setSearchWord: (state, action: PayloadAction<string>) => {
+      state.searchWord = action.payload;
+    },
   },
 });
 
-export const { addExpense, setBudget, updateExpenses } = expenseSlice.actions;
+export const { addExpense, setBudget, updateExpenses, setSearchWord } =
+  expenseSlice.actions;
 
 export default expenseSlice.reducer;

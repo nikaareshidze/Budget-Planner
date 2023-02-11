@@ -9,22 +9,28 @@ type Inputs = {
   search: string;
 };
 
-import { changeAllExpenseVisibility } from "../store/visibilitySlice";
+//
+import ExpenseItem from "./ExpenseItem";
+
+import { setSearchWord } from "../store/expenseSlice";
 
 export default function SearchExpense() {
   const dispatch = useDispatch();
 
   const expenses = useSelector((state: RootState) => state.expense.expenses);
+  const searchWord = useSelector(
+    (state: RootState) => state.expense.searchWord
+  );
 
   const { register, handleSubmit } = useForm<Inputs>();
 
-  let [searchValue, setSearchValue] = useState("");
-
   const search: SubmitHandler<Inputs> = (data) => {
-    setSearchValue(data.search);
+    dispatch(setSearchWord(data.search));
   };
 
-  const searchResultObject = expenses.find((i) => i.name == searchValue);
+  const searchResultObject = expenses.filter((item) =>
+    item.name.includes(searchWord)
+  );
 
   return (
     <div>
@@ -32,22 +38,17 @@ export default function SearchExpense() {
         <SearchInput {...register("search")} placeholder="Type to search..." />
       </SearchForm>
 
-      {searchResultObject && (
-        <ExpenseDiv>
-          <Title>{searchResultObject?.name}</Title>
-          <ExpenseCostDiv>
-            <Title>{`$${searchResultObject?.cost}`}</Title>
-          </ExpenseCostDiv>
-        </ExpenseDiv>
-      )}
+      <div style={{ marginBottom: "1em" }}>
+        {searchWord.length > 0 &&
+          searchResultObject.map(function (item) {
+            return <ExpenseItem item={item} />;
+          })}
+      </div>
     </div>
   );
 }
 
 // style imports
-import ExpenseDiv from "../styles/expense/ExpenseDiv";
-import Title from "../styles/fonts/Title";
-import ExpenseCostDiv from "../styles/expense/ExpenseCostDiv";
 
 const SearchForm = styled.form`
   margin-bottom: 1em;
