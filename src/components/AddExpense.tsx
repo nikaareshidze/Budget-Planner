@@ -35,7 +35,7 @@ export default function AddExpense() {
       <SectionTitle>Add Expense</SectionTitle>
 
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <div style={{ display: "flex", gap: "1em" }}>
+        <FormChild>
           <div>
             <Title>Name</Title>
             <Input {...register("expenseName", { required: true })} />
@@ -51,7 +51,7 @@ export default function AddExpense() {
               })}
             />
           </div>
-        </div>
+        </FormChild>
 
         <ThisButton>Save</ThisButton>
       </Form>
@@ -68,4 +68,13 @@ import Form from "../styles/Form";
 
 const ThisButton = styled(Button)`
   margin-top: 1em;
+`;
+
+const FormChild = styled.div`
+  display: flex;
+  gap: 1em;
+
+  @media (max-width: 610px) {
+    flex-direction: column;
+  }
 `;

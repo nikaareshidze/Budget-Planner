@@ -31,17 +31,11 @@ export default function EditBudgetForm() {
     <>
       {editBudgetVisibility && (
         <ThisForm onSubmit={handleSubmit(onSubmit)}>
-          <div
-            style={{
-              display: "flex",
-              gap: "1em",
-              alignItems: "center",
-            }}
-          >
+          <ThisFormChild>
             <Title>Please, set the new budget</Title>
             <ThisInput {...register("newBudget", { required: true })} />
             <Button>Choose</Button>
-          </div>
+          </ThisFormChild>
         </ThisForm>
       )}
     </>
@@ -56,6 +50,17 @@ import Form from "../styles/Form";
 
 const ThisForm = styled(Form)`
   margin-top: 0.5em;
+`;
+
+const ThisFormChild = styled.div`
+  display: flex;
+  gap: 1em;
+  align-items: center;
+
+  @media (max-width: 610px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const ThisInput = styled(Input)`
