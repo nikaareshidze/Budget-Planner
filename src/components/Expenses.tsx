@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
+// component imports
 import ExpenseItem from "./ExpenseItem";
-import SectionTitle from "../styles/SectionsTitle";
 
 export default function Expenses() {
   const expenses = useSelector((state: RootState) => state.expense.expenses);
@@ -18,3 +18,6 @@ export default function Expenses() {
     </div>
   );
 }
+
+// style imports
+import SectionTitle from "../styles/SectionsTitle";

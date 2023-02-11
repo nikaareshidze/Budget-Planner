@@ -19,12 +19,15 @@ export const expenseSlice = createSlice({
     addExpense: (state, action: PayloadAction<expenseObject>) => {
       state.expenses.push(action.payload);
     },
+    updateExpenses: (state, action: PayloadAction<expenseObject[]>) => {
+      state.expenses = action.payload;
+    },
     setBudget: (state, action: PayloadAction<number>) => {
       state.budget = action.payload;
     },
   },
 });
 
-export const { addExpense, setBudget } = expenseSlice.actions;
+export const { addExpense, setBudget, updateExpenses } = expenseSlice.actions;
 
 export default expenseSlice.reducer;
