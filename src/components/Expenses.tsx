@@ -3,9 +3,13 @@ import { RootState } from "../store/store";
 
 // component imports
 import ExpenseItem from "./ExpenseItem";
+import SearchExpense from "./SearchExpense";
 
 export default function Expenses() {
   const expenses = useSelector((state: RootState) => state.expense.expenses);
+  const allExpenseVisibility = useSelector(
+    (state: RootState) => state.visibility.allExpenseVisibility
+  );
 
   const expense = expenses.map(function (item) {
     return <ExpenseItem item={item} />;
@@ -14,7 +18,8 @@ export default function Expenses() {
   return (
     <div>
       <SectionTitle>Expenses</SectionTitle>
-      <div>{expense}</div>
+      <SearchExpense />
+      <div>{allExpenseVisibility && expense}</div>
     </div>
   );
 }
