@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ExpenseSlice from "./expenseSlice";
+import expenseSlice from "./expenseSlice";
+import visibilitySlice from "./visibilitySlice";
 
 export const store = configureStore({
   reducer: {
-    expense: ExpenseSlice,
+    expense: expenseSlice,
+    visibility: visibilitySlice,
   },
 });
 
