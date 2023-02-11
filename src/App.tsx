@@ -1,6 +1,6 @@
 import Cards from "./components/Cards";
-import AddExpense from "./components/add expenses/AddExpense";
-import Expenses from "./components/expenses/Expenses";
+import AddExpense from "./components/AddExpense";
+import Expenses from "./components/Expenses";
 
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";

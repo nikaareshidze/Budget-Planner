@@ -6,7 +6,7 @@ import { useState } from "react";
 // component imports
 import EditBudgetForm from "./EditBudgetForm";
 
-// imports from store
+// store imports
 import { changeEditBudgetVisibility } from "../store/visibilitySlice";
 
 // typescript declarations

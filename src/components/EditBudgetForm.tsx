@@ -1,10 +1,13 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
+import styled from "styled-components";
 
+// store imports
 import { setBudget } from "../store/expenseSlice";
 import { changeEditBudgetVisibility } from "../store/visibilitySlice";
 
+//typescript declarations
 type Inputs = {
   newBudget: number;
 };
@@ -27,7 +30,7 @@ export default function EditBudgetForm() {
   return (
     <>
       {editBudgetVisibility && (
-        <form onSubmit={handleSubmit(onSubmit)} style={formStyle}>
+        <ThisForm onSubmit={handleSubmit(onSubmit)}>
           <div
             style={{
               display: "flex",
@@ -36,28 +39,25 @@ export default function EditBudgetForm() {
             }}
           >
             <Title>Please, set the new budget</Title>
-            <input
-              {...register("newBudget", { required: true })}
-              style={inputStyle}
-            />
+            <ThisInput {...register("newBudget", { required: true })} />
             <Button>Choose</Button>
           </div>
-        </form>
+        </ThisForm>
       )}
     </>
   );
 }
 
+// style imports
 import Button from "../styles/buttons/Button";
 import Title from "../styles/fonts/Title";
+import Input from "../styles/Input";
+import Form from "../styles/Form";
 
-const formStyle: {} = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "1em",
-};
+const ThisForm = styled(Form)`
+  margin-top: 0.5em;
+`;
 
-const inputStyle = {
-  width: "15rem",
-  height: "2rem",
-};
+const ThisInput = styled(Input)`
+  margin-top: 0;
+`;

@@ -1,19 +1,18 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import styled from "styled-components";
 
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/store";
+// store imports
+import { addExpense } from "../store/expenseSlice";
 
-import { addExpense } from "../../store/expenseSlice";
-
+//typescript declarations
 type Inputs = {
   expenseName: string;
   expenseCost: number;
 };
 
 export default function AddExpense() {
-  const expenses = useSelector((state: RootState) => state.expense.expenses);
-
   const dispatch = useDispatch();
 
   const { register, handleSubmit, resetField } = useForm<Inputs>();
@@ -32,47 +31,39 @@ export default function AddExpense() {
   return (
     <>
       <SectionTitle>Add Expense</SectionTitle>
-      <form onSubmit={handleSubmit(onSubmit)} style={formStyle}>
+
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ display: "flex", gap: "1em" }}>
           <div>
             <Title>Name</Title>
-            <input
-              {...register("expenseName", { required: true })}
-              style={inputStyle}
-            />
+            <Input {...register("expenseName", { required: true })} />
           </div>
 
           <div>
             <Title>Cost</Title>
-            <input
+            <Input
               type="number"
               {...register("expenseCost", {
                 required: true,
                 valueAsNumber: true,
               })}
-              style={inputStyle}
             />
           </div>
         </div>
 
-        <Button>Save</Button>
-      </form>
+        <ThisButton>Save</ThisButton>
+      </Form>
     </>
   );
 }
 
-import Button from "../../styles/buttons/Button";
-import Title from "../../styles/fonts/Title";
-import SectionTitle from "../../styles/SectionsTitle";
+// style imports
+import Button from "../styles/buttons/Button";
+import Title from "../styles/fonts/Title";
+import SectionTitle from "../styles/SectionsTitle";
+import Input from "../styles/Input";
+import Form from "../styles/Form";
 
-const inputStyle = {
-  width: "20rem",
-  height: "2rem",
-  marginTop: "0.6em",
-};
-
-const formStyle: {} = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "1em",
-};
+const ThisButton = styled(Button)`
+  margin-top: 1em;
+`;

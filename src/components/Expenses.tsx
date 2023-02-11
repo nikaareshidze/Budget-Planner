@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../store/store";
 
 import ExpenseItem from "./ExpenseItem";
-import SectionTitle from "../../styles/SectionsTitle";
+import SectionTitle from "../styles/SectionsTitle";
 
 export default function Expenses() {
   const expenses = useSelector((state: RootState) => state.expense.expenses);
