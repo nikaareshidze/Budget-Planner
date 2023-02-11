@@ -9,9 +9,10 @@ type Inputs = {
   search: string;
 };
 
-//
+//component imports
 import ExpenseItem from "./ExpenseItem";
 
+//store imports
 import { setSearchWord } from "../store/expenseSlice";
 
 export default function SearchExpense() {
@@ -52,7 +53,7 @@ export default function SearchExpense() {
   );
 }
 
-// style imports
+//style imports
 
 const SearchForm = styled.form`
   margin-bottom: 1em;

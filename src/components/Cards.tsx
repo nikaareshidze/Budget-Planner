@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { useState } from "react";
 
-// component imports
+//component imports
 import EditBudgetForm from "./EditBudgetForm";
 
-// store imports
+//store imports
 import { changeEditBudgetVisibility } from "../store/visibilitySlice";
 
-// typescript declarations
+//typescript declarations
 type Inputs = {
   newBudget: number;
 };
@@ -33,14 +33,13 @@ export default function Cards() {
       <StyledCards>
         <Card bgColor="#E6E2C3" style={{ justifyContent: "space-between" }}>
           <ThisTitle>{`Budget: $${budget}`}</ThisTitle>
-          <Button
-            style={{ marginRight: "1em" }}
+          <ThisButton
             onClick={() => {
               dispatch(changeEditBudgetVisibility());
             }}
           >
             Edit
-          </Button>
+          </ThisButton>
         </Card>
 
         <Card bgColor="#227C70">
@@ -64,7 +63,11 @@ const ThisTitle = styled(Title)`
   padding-left: 1em;
 `;
 
+const ThisButton = styled(Button)`
+  margin-right: 1em;
+`;
+
 import Card from "../styles/Card";
-import Title from "../styles/fonts/Title";
+import Title from "../styles/Title";
 import StyledCards from "../styles/StyledCards";
-import Button from "../styles/buttons/Button";
+import Button from "../styles/Button";

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
-// component imports
+//component imports
 import ExpenseItem from "./ExpenseItem";
 import SearchExpense from "./SearchExpense";
 
@@ -24,5 +24,5 @@ export default function Expenses() {
   );
 }
 
-// style imports
+//style imports
 import SectionTitle from "../styles/SectionsTitle";

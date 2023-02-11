@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
 import { useState } from "react";
+import styled from "styled-components";
 
 import { updateExpenses } from "../store/expenseSlice";
 
@@ -26,7 +27,7 @@ export default function ExpenseItem({ item }: any) {
   return (
     <ExpenseDiv>
       <Title>{item.name}</Title>
-      <div style={{ display: "flex", alignItems: "center", gap: "1em" }}>
+      <ExpenseDivChild>
         <ExpenseCostDiv>
           <Title>{`$${item.cost}`}</Title>
         </ExpenseCostDiv>
@@ -46,12 +47,18 @@ export default function ExpenseItem({ item }: any) {
         >
           delete
         </span>
-      </div>
+      </ExpenseDivChild>
     </ExpenseDiv>
   );
 }
 
-// style imports
-import ExpenseDiv from "../styles/expense/ExpenseDiv";
-import Title from "../styles/fonts/Title";
-import ExpenseCostDiv from "../styles/expense/ExpenseCostDiv";
+//style imports
+import ExpenseDiv from "../styles/ExpenseDiv";
+import Title from "../styles/Title";
+import ExpenseCostDiv from "../styles/ExpenseCostDiv";
+
+const ExpenseDivChild = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1em;
+`;

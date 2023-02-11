@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import styled from "styled-components";
 
-// store imports
+//store imports
 import { setBudget } from "../store/expenseSlice";
 import { changeEditBudgetVisibility } from "../store/visibilitySlice";
 
@@ -42,9 +42,9 @@ export default function EditBudgetForm() {
   );
 }
 
-// style imports
-import Button from "../styles/buttons/Button";
-import Title from "../styles/fonts/Title";
+//style imports
+import Button from "../styles/Button";
+import Title from "../styles/Title";
 import Input from "../styles/Input";
 import Form from "../styles/Form";
 

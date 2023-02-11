@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-// store imports
+//store imports
 import { addExpense } from "../store/expenseSlice";
 import { setSearchWord } from "../store/expenseSlice";
 
@@ -59,9 +59,9 @@ export default function AddExpense() {
   );
 }
 
-// style imports
-import Button from "../styles/buttons/Button";
-import Title from "../styles/fonts/Title";
+//style imports
+import Button from "../styles/Button";
+import Title from "../styles/Title";
 import SectionTitle from "../styles/SectionsTitle";
 import Input from "../styles/Input";
 import Form from "../styles/Form";
