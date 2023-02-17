@@ -31,7 +31,7 @@ export default function Cards() {
   return (
     <>
       <StyledCards>
-        <Card bgColor="#E6E2C3" style={{ justifyContent: "space-between" }}>
+        <Card bgColor="#481991" style={{ justifyContent: "space-between" }}>
           <ThisTitle>{`Budget: $${budget}`}</ThisTitle>
           <ThisButton
             onClick={() => {
