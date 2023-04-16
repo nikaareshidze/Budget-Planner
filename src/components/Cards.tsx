@@ -31,7 +31,7 @@ export default function Cards() {
   return (
     <>
       <StyledCards>
-        <Card bgColor="#481991" style={{ justifyContent: "space-between" }}>
+        <Card bgColor="#98D8AA" style={{ justifyContent: "space-between" }}>
           <ThisTitle>{`Budget: $${budget}`}</ThisTitle>
           <ThisButton
             onClick={() => {
@@ -42,13 +42,13 @@ export default function Cards() {
           </ThisButton>
         </Card>
 
-        <Card bgColor="#227C70">
+        <Card bgColor="#F3E99F">
           <ThisTitle>{`Remaining: $${
             expenses[0] ? remaining : budget
           }`}</ThisTitle>
         </Card>
 
-        <Card bgColor="#1C315E">
+        <Card bgColor="#FF6D60">
           <ThisTitle>{`Spent so far: $${spentSoFar}`}</ThisTitle>
         </Card>
       </StyledCards>
