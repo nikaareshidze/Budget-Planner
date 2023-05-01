@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ExpenseCostDiv = styled.div`
-  padding-left: 0.5em;
+  /* padding-left: 0.5em;
   padding-right: 0.5em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -11,8 +11,9 @@ const ExpenseCostDiv = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: #1c315e;
-  color: white;
+  background-color: #1c315e; */
+  background-color: white;
+  color: red;
 `;
 
 export default ExpenseCostDiv;

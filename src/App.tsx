@@ -12,13 +12,22 @@ export default function App() {
 
   return (
     <Container>
-      <SectionTitle>My Budget Planner</SectionTitle>
+      {/* <SearchExpense /> */}
+      <Greeting />
       <Cards />
-      {expenseExists && <Expenses />}
-      <AddExpense />
+      <div style={{ display: "flex", gap: "1em" }}>
+        {expenseExists && <Expenses />}
+        <div style={{ width: "33%" }}>
+          <AddExpense />
+          <AddBudget />
+        </div>
+      </div>
     </Container>
   );
 }
 
 import Container from "./styles/Container";
 import SectionTitle from "./styles/SectionsTitle";
+import Greeting from "./components/Greeting";
+import SearchExpense from "./components/SearchExpense";
+import AddBudget from "./components/AddBudget";

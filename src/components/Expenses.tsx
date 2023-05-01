@@ -16,13 +16,15 @@ export default function Expenses() {
   });
 
   return (
-    <div>
-      <SectionTitle>Expenses</SectionTitle>
-      <SearchExpense />
-      <div>{searchWord.length == 0 && expense}</div>
+    <div style={{ width: "66%" }}>
+      <SectionTitle>Transactions</SectionTitle>
+      {/* <SearchExpense /> */}
+      {/* <ExpenseContainer>{searchWord.length == 0 && expense}</ExpenseContainer> */}
+      <ExpenseContainer>{expense}</ExpenseContainer>
     </div>
   );
 }
 
 //style imports
 import SectionTitle from "../styles/SectionsTitle";
+import ExpenseContainer from "../styles/expenses/ExpenseContainer";

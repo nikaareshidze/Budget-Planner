@@ -13,12 +13,14 @@ type Inputs = {
   expenseCost: number;
 };
 
+import { SiContactlesspayment } from "react-icons/si";
+
 export default function AddExpense() {
   const dispatch = useDispatch();
 
   const { register, handleSubmit, resetField } = useForm<Inputs>();
 
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(4);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     dispatch(
@@ -31,18 +33,18 @@ export default function AddExpense() {
   };
 
   return (
-    <>
-      <SectionTitle>Add Expense</SectionTitle>
+    <div>
+      <SectionTitle>Buy Something</SectionTitle>
 
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormChild>
           <div>
-            <Title>Name</Title>
+            <Title>Product Name</Title>
             <Input {...register("expenseName", { required: true })} />
           </div>
 
           <div>
-            <Title>Cost</Title>
+            <Title>Product Cost</Title>
             <Input
               type="number"
               {...register("expenseCost", {
@@ -53,9 +55,9 @@ export default function AddExpense() {
           </div>
         </FormChild>
 
-        <ThisButton>Save</ThisButton>
+        <ThisButton>Buy</ThisButton>
       </Form>
-    </>
+    </div>
   );
 }
 
@@ -72,6 +74,7 @@ const ThisButton = styled(Button)`
 
 const FormChild = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1em;
 
   @media (max-width: 610px) {

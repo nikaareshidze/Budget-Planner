@@ -9,7 +9,12 @@ export interface expenseSlice {
 }
 
 const initialState: expenseSlice = {
-  expenses: [],
+  expenses: [
+    { id: 0, cost: 14, name: "Spotify Subscription" },
+    { id: 1, cost: 160, name: "Nike Shoes" },
+    { id: 2, cost: 75, name: "Camp Now Ticket" },
+    { id: 3, cost: 578, name: "World Cup 2023" },
+  ],
   budget: 2000,
   searchWord: "",
 };
@@ -27,13 +32,21 @@ export const expenseSlice = createSlice({
     setBudget: (state, action: PayloadAction<number>) => {
       state.budget = action.payload;
     },
+    addBudget: (state, action: PayloadAction<number>) => {
+      state.budget = state.budget + action.payload;
+    },
     setSearchWord: (state, action: PayloadAction<string>) => {
       state.searchWord = action.payload;
     },
   },
 });
 
-export const { addExpense, setBudget, updateExpenses, setSearchWord } =
-  expenseSlice.actions;
+export const {
+  addExpense,
+  setBudget,
+  updateExpenses,
+  setSearchWord,
+  addBudget,
+} = expenseSlice.actions;
 
 export default expenseSlice.reducer;

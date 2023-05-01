@@ -5,10 +5,11 @@ const ExpenseDiv = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  border: 0.1em;
-  border-color: black;
-  border-style: solid;
   padding: 1em;
+  background-color: transparent;
+
+  padding-bottom: 12px;
+  border-bottom: 0.3px solid black;
 `;
 
 export default ExpenseDiv;

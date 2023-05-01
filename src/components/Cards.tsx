@@ -14,6 +14,10 @@ type Inputs = {
   newBudget: number;
 };
 
+import { FaWallet } from "react-icons/fa";
+import { GiPayMoney } from "react-icons/gi";
+import { MdSavings } from "react-icons/md";
+
 export default function Cards() {
   const dispatch = useDispatch();
 
@@ -30,26 +34,45 @@ export default function Cards() {
 
   return (
     <>
+      <h1>Overview</h1>
       <StyledCards>
-        <Card bgColor="#98D8AA" style={{ justifyContent: "space-between" }}>
-          <ThisTitle>{`Budget: $${budget}`}</ThisTitle>
-          <ThisButton
+        <Card>
+          <div>
+            <CardTitle>Total Budget</CardTitle>
+            <CardMoneyTitle>{`$${budget}`}</CardMoneyTitle>
+          </div>
+          <div style={{ paddingTop: "10px", paddingRight: "20px" }}>
+            <FaWallet size={30} />
+          </div>
+          {/* <ThisButton
             onClick={() => {
               dispatch(changeEditBudgetVisibility());
             }}
           >
             Edit
-          </ThisButton>
+          </ThisButton> */}
         </Card>
 
-        <Card bgColor="#F3E99F">
-          <ThisTitle>{`Remaining: $${
-            expenses[0] ? remaining : budget
-          }`}</ThisTitle>
+        <Card>
+          <div>
+            <CardTitle>Total Expenses</CardTitle>
+            <CardMoneyTitle>{`$${spentSoFar}`}</CardMoneyTitle>
+          </div>
+          <div style={{ paddingTop: "10px", paddingRight: "20px" }}>
+            <GiPayMoney size={30} />
+          </div>
         </Card>
 
-        <Card bgColor="#FF6D60">
-          <ThisTitle>{`Spent so far: $${spentSoFar}`}</ThisTitle>
+        <Card>
+          <div>
+            <CardTitle>Total Savings</CardTitle>
+            <CardMoneyTitle>{`$${
+              expenses[0] ? remaining : budget
+            }`}</CardMoneyTitle>
+          </div>
+          <div style={{ paddingTop: "10px", paddingRight: "20px" }}>
+            <MdSavings size={30} />
+          </div>
         </Card>
       </StyledCards>
 
@@ -61,6 +84,20 @@ export default function Cards() {
 // style imports & declarations
 const ThisTitle = styled(Title)`
   padding-left: 1em;
+`;
+
+const CardTitle = styled(Title)`
+  padding-top: 10px;
+  padding-left: 20px;
+  color: black;
+`;
+
+const CardMoneyTitle = styled(Title)`
+  padding-top: 5px;
+  font-size: x-large;
+  color: black;
+  font-weight: 600;
+  padding-left: 20px;
 `;
 
 const ThisButton = styled(Button)`

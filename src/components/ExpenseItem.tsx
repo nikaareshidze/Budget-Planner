@@ -55,10 +55,11 @@ export default function ExpenseItem({ item }: any) {
 //style imports
 import ExpenseDiv from "../styles/ExpenseDiv";
 import Title from "../styles/Title";
-import ExpenseCostDiv from "../styles/ExpenseCostDiv";
+import ExpenseCostDiv from "../styles/expenses/ExpenseCostDiv";
 
 const ExpenseDivChild = styled.div`
   display: flex;
   align-items: center;
   gap: 1em;
+  background-color: white;
 `;
