@@ -3,8 +3,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { addBudget } from "../store/expenseSlice";
 import Form from "../styles/Form";
 import Input from "../styles/Input";
-import SectionTitle from "../styles/SectionsTitle";
 import Title from "../styles/Title";
+import Button from "../styles/Button";
+import SectionTitle from "../styles/SectionTitle";
 
 type Inputs = {
   money: number;
@@ -22,11 +23,13 @@ export default function AddBudget() {
 
   return (
     <div>
-      <SectionTitle>Help From Elon</SectionTitle>
-
       <Form onSubmit={handleSubmit(onSubmit)}>
+        <div style={{ marginBottom: "16px" }}>
+          <SectionTitle>Help From Elon Musk</SectionTitle>
+        </div>
+
         <div>
-          <Title>Product Cost</Title>
+          <Title>How much do you need?</Title>
           <Input
             type="number"
             {...register("money", {
@@ -36,7 +39,9 @@ export default function AddBudget() {
           />
         </div>
 
-        <button>Thanks!</button>
+        <div style={{ marginTop: "8px" }}>
+          <Button>Thanks!</Button>
+        </div>
       </Form>
     </div>
   );

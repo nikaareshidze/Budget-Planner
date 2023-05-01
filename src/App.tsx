@@ -12,22 +12,21 @@ export default function App() {
 
   return (
     <Container>
-      {/* <SearchExpense /> */}
       <Greeting />
       <Cards />
-      <div style={{ display: "flex", gap: "1em" }}>
+      <MainContainer>
         {expenseExists && <Expenses />}
-        <div style={{ width: "33%" }}>
+        <AddExpenseAddBudgetContainer>
           <AddExpense />
           <AddBudget />
-        </div>
-      </div>
+        </AddExpenseAddBudgetContainer>
+      </MainContainer>
     </Container>
   );
 }
 
 import Container from "./styles/Container";
-import SectionTitle from "./styles/SectionsTitle";
 import Greeting from "./components/Greeting";
-import SearchExpense from "./components/SearchExpense";
 import AddBudget from "./components/AddBudget";
+import MainContainer from "./styles/main-content/MainContainer";
+import AddExpenseAddBudgetContainer from "./styles/AddExpenseAddBudgetContainer";

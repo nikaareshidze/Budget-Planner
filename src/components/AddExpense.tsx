@@ -33,8 +33,10 @@ export default function AddExpense() {
   };
 
   return (
-    <div>
-      <SectionTitle>Buy Something</SectionTitle>
+    <div style={{ marginBottom: "16px" }}>
+      <div style={{ marginBottom: "16px" }}>
+        <SectionTitle>Buy Something</SectionTitle>
+      </div>
 
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormChild>
@@ -64,7 +66,7 @@ export default function AddExpense() {
 //style imports
 import Button from "../styles/Button";
 import Title from "../styles/Title";
-import SectionTitle from "../styles/SectionsTitle";
+import SectionTitle from "../styles/SectionTitle";
 import Input from "../styles/Input";
 import Form from "../styles/Form";
 

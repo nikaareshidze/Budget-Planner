@@ -34,16 +34,18 @@ export default function Cards() {
 
   return (
     <>
-      <h1>Overview</h1>
+      <div style={{ marginBottom: "16px" }}>
+        <SectionTitle>Overview</SectionTitle>
+      </div>
       <StyledCards>
         <Card>
-          <div>
+          <div style={{ backgroundColor: "transparent" }}>
             <CardTitle>Total Budget</CardTitle>
             <CardMoneyTitle>{`$${budget}`}</CardMoneyTitle>
           </div>
-          <div style={{ paddingTop: "10px", paddingRight: "20px" }}>
-            <FaWallet size={30} />
-          </div>
+          <IconContainer>
+            <FaWallet size={20} />
+          </IconContainer>
           {/* <ThisButton
             onClick={() => {
               dispatch(changeEditBudgetVisibility());
@@ -54,25 +56,25 @@ export default function Cards() {
         </Card>
 
         <Card>
-          <div>
+          <div style={{ backgroundColor: "transparent" }}>
             <CardTitle>Total Expenses</CardTitle>
             <CardMoneyTitle>{`$${spentSoFar}`}</CardMoneyTitle>
           </div>
-          <div style={{ paddingTop: "10px", paddingRight: "20px" }}>
-            <GiPayMoney size={30} />
-          </div>
+          <IconContainer>
+            <GiPayMoney size={20} />
+          </IconContainer>
         </Card>
 
         <Card>
-          <div>
+          <div style={{ backgroundColor: "transparent" }}>
             <CardTitle>Total Savings</CardTitle>
             <CardMoneyTitle>{`$${
               expenses[0] ? remaining : budget
             }`}</CardMoneyTitle>
           </div>
-          <div style={{ paddingTop: "10px", paddingRight: "20px" }}>
-            <MdSavings size={30} />
-          </div>
+          <IconContainer>
+            <MdSavings size={20} />
+          </IconContainer>
         </Card>
       </StyledCards>
 
@@ -90,6 +92,7 @@ const CardTitle = styled(Title)`
   padding-top: 10px;
   padding-left: 20px;
   color: black;
+  background-color: transparent;
 `;
 
 const CardMoneyTitle = styled(Title)`
@@ -98,6 +101,7 @@ const CardMoneyTitle = styled(Title)`
   color: black;
   font-weight: 600;
   padding-left: 20px;
+  background-color: transparent;
 `;
 
 const ThisButton = styled(Button)`
@@ -108,3 +112,5 @@ import Card from "../styles/Card";
 import Title from "../styles/Title";
 import StyledCards from "../styles/StyledCards";
 import Button from "../styles/Button";
+import SectionTitle from "../styles/SectionTitle";
+import IconContainer from "../styles/IconContainer";

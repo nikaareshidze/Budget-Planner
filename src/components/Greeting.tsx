@@ -1,8 +1,12 @@
+import GreetingContainer from "../styles/greeting/GreetingContainer";
+import GreetingDescription from "../styles/greeting/GreetingDescription";
+import GreetingTitle from "../styles/greeting/GreetingTitle";
+
 export default function Greeting() {
   return (
-    <div>
-      <h1>Welcome back, Nika!</h1>
-      <p>Good to see you again, Nika</p>
-    </div>
+    <GreetingContainer>
+      <GreetingTitle>Welcome back, Nika!</GreetingTitle>
+      <GreetingDescription>Good to see you again, Nika</GreetingDescription>
+    </GreetingContainer>
   );
 }

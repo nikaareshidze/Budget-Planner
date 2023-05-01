@@ -3,28 +3,25 @@ import { RootState } from "../store/store";
 
 //component imports
 import ExpenseItem from "./ExpenseItem";
-import SearchExpense from "./SearchExpense";
 
 export default function Expenses() {
   const expenses = useSelector((state: RootState) => state.expense.expenses);
-  const searchWord = useSelector(
-    (state: RootState) => state.expense.searchWord
-  );
 
   const expense = expenses.map(function (item) {
     return <ExpenseItem item={item} />;
   });
 
   return (
-    <div style={{ width: "66%" }}>
-      <SectionTitle>Transactions</SectionTitle>
-      {/* <SearchExpense /> */}
-      {/* <ExpenseContainer>{searchWord.length == 0 && expense}</ExpenseContainer> */}
+    <TransactionContainer>
+      <div style={{ marginBottom: "16px" }}>
+        <SectionTitle>Transactions</SectionTitle>
+      </div>
       <ExpenseContainer>{expense}</ExpenseContainer>
-    </div>
+    </TransactionContainer>
   );
 }
 
 //style imports
-import SectionTitle from "../styles/SectionsTitle";
+import SectionTitle from "../styles/SectionTitle";
 import ExpenseContainer from "../styles/expenses/ExpenseContainer";
+import TransactionContainer from "../styles/TransactionContainer";
