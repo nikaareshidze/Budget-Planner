@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: white;
+  //  background-color: #07090A;
   }
 `;
 

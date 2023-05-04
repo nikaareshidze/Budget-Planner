@@ -84,33 +84,26 @@ export default function Cards() {
 }
 
 // style imports & declarations
-const ThisTitle = styled(Title)`
-  padding-left: 1em;
-`;
 
 const CardTitle = styled(Title)`
   padding-top: 10px;
   padding-left: 20px;
-  color: black;
+  color: #2c3333;
+  font-size: 14px;
   background-color: transparent;
 `;
 
 const CardMoneyTitle = styled(Title)`
-  padding-top: 5px;
-  font-size: x-large;
-  color: black;
+  padding-top: 10px;
+  font-size: 28px;
+  color: #2c3333;
   font-weight: 600;
   padding-left: 20px;
   background-color: transparent;
 `;
 
-const ThisButton = styled(Button)`
-  margin-right: 1em;
-`;
-
 import Card from "../styles/Card";
 import Title from "../styles/Title";
 import StyledCards from "../styles/StyledCards";
-import Button from "../styles/Button";
 import SectionTitle from "../styles/SectionTitle";
 import IconContainer from "../styles/IconContainer";

@@ -20,7 +20,7 @@ export default function AddExpense() {
 
   const { register, handleSubmit, resetField } = useForm<Inputs>();
 
-  const [id, setId] = useState(4);
+  const [id, setId] = useState(31);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     dispatch(

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 const Card = styled.div<{ bgColor?: string }>`
-  width: 32%;
-  height: 6em;
+  width: 33%;
+  height: 7em;
   border: 1px solid black;
   border-radius: 10px;
   background-color: white;
+
   //background-color: ${(props) => props.bgColor};
 
   /* display: flex;
